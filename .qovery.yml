@@ -1,0 +1,20 @@
+---
+application:
+  name: "wordpress-kubernetes"
+  project: "kubernetes-wp"
+  organization: "QoveryCommunity"
+  storage:
+  - name: "frap"
+    size: "10"
+    type: "ssd"
+    mount_point: "/mnt/frap"
+databases:
+- type: "MYSQL"
+  name: "fred"
+  version: "8.0"
+routers:
+- name: "main-wordpress-kubernetes"
+  routes:
+  - application_name: "wordpress-kubernetes"
+    paths:
+    - "/*"
